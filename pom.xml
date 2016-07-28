@@ -130,7 +130,17 @@
 						<groupId>org.springframework</groupId>
 						<artifactId>spring-web</artifactId>
 					</exclusion>
+					<!-- 如果不排除这个会导致 hibernate5 报错：NoSuchMethodError org.jboss.logging.Logger.debugf-->
+					<exclusion>
+						<groupId>org.glassfish.hk2.external</groupId>
+						<artifactId>bean-validator</artifactId>
+					</exclusion>
 				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.jersey.ext</groupId>
+				<artifactId>jersey-bean-validation</artifactId>
+				<version>${jersey.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.glassfish.jersey.ext</groupId>
